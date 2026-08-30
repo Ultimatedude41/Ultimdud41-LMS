@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui.LMS.Views.TeacherCourseSettingsView"
+             Title="TeacherCourseSettingsView">
+	<ScrollView>
+		<VerticalStackLayout>
+			<Label Text="Course Settings" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18"/>
+			<Label x:Name="CourseNameLabel" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+			<Label Text="Letter Grade Ranges" FontSize="16" FontAttributes="Bold" Margin="0,20,0,10"/>
+			<Label Text="Enter the minimum percentage for each letter grade:"/>
+
+			<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnSpacing="10" RowSpacing="10">
+				<!-- A Grade -->
+				<Label Grid.Row="0" Grid.Column="0" Text="A:" VerticalOptions="Center"/>
+				<Entry Grid.Row="0" Grid.Column="1" x:Name="AGradeEntry" Placeholder="90" Keyboard="Numeric"/>
+
+				<!-- B Grade -->
+				<Label Grid.Row="1" Grid.Column="0" Text="B:" VerticalOptions="Center"/>
+				<Entry Grid.Row="1" Grid.Column="1" x:Name="BGradeEntry" Placeholder="80" Keyboard="Numeric"/>
+
+				<!-- C Grade -->
+				<Label Grid.Row="2" Grid.Column="0" Text="C:" VerticalOptions="Center"/>
+				<Entry Grid.Row="2" Grid.Column="1" x:Name="CGradeEntry" Placeholder="70" Keyboard="Numeric"/>
+
+				<!-- D Grade -->
+				<Label Grid.Row="3" Grid.Column="0" Text="D:" VerticalOptions="Center"/>
+				<Entry Grid.Row="3" Grid.Column="1" x:Name="DGradeEntry" Placeholder="60" Keyboard="Numeric"/>
+
+				<!-- F Grade -->
+				<Label Grid.Row="4" Grid.Column="0" Text="F:" VerticalOptions="Center"/>
+				<Label Grid.Row="4" Grid.Column="1" Text="Below D threshold" VerticalOptions="Center"/>
+			</Grid>
+
+			<Label Text="Example: If A=90, then 90-100 is an A" FontSize="12" TextColor="Gray" Margin="0,5,0,0"/>
+
+			<Button Text="Save Settings" Clicked="OnSaveSettingsClicked" Margin="0,20,0,0"/>
+			<Button Text="Reset to Defaults" Clicked="OnResetToDefaultsClicked"/>
+			<Button Text="Go Back" Clicked="GoBackClicked"/>
+		</VerticalStackLayout>
+	</ScrollView>
+</ContentPage>

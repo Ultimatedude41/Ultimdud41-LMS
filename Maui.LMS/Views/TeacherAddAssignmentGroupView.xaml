@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui.LMS.Views.TeacherAddAssignmentGroupView"
+             Title="TeacherAddAssignmentGroupView">
+	<ScrollView>
+		<VerticalStackLayout>
+			<Label Text="Add New Assignment Group" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18"/>
+
+			<Label Text="Group Name:"/>
+			<Entry x:Name="NameEntry" Placeholder="e.g., Homework"/>
+
+			<Label Text="Weight (%):"/>
+			<Entry x:Name="WeightEntry" Placeholder="e.g., 30" Keyboard="Numeric"/>
+
+			<Button Text="Create Group" Clicked="OnCreateGroupClicked"/>
+			<Button Text="Cancel" Clicked="OnCancelClicked"/>
+		</VerticalStackLayout>
+	</ScrollView>
+</ContentPage>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui.LMS.Views.TeacherEditAnnouncementView"
+             Title="TeacherEditAnnouncementView">
+	<ScrollView>
+		<VerticalStackLayout>
+			<Label Text="Edit Announcement" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18"/>
+
+			<Label Text="Title:"/>
+			<Entry x:Name="TitleEntry" Placeholder="Enter announcement title"/>
+
+			<Label Text="Message:"/>
+			<Editor x:Name="MessageEditor" Placeholder="Enter announcement message" HeightRequest="200"/>
+
+			<Button Text="Save Changes" Clicked="OnSaveClicked"/>
+			<Button Text="Cancel" Clicked="OnCancelClicked"/>
+		</VerticalStackLayout>
+	</ScrollView>
+</ContentPage>

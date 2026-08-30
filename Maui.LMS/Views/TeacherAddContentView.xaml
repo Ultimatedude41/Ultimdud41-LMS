@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui.LMS.Views.TeacherAddContentView"
+             Title="TeacherAddContentView">
+	<ScrollView>
+		<VerticalStackLayout>
+			<Label Text="Add Content to Module" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18"/>
+
+			<Label Text="Content Type:"/>
+			<Picker x:Name="ContentTypePicker" SelectedIndexChanged="OnContentTypeChanged">
+				<Picker.Items>
+					<x:String>Page</x:String>
+					<x:String>File</x:String>
+					<x:String>Assignment Link</x:String>
+				</Picker.Items>
+			</Picker>
+
+			<!-- Page fields -->
+			<StackLayout x:Name="PageSection" IsVisible="False">
+				<Label Text="Page Name:"/>
+				<Entry x:Name="PageNameEntry" Placeholder="Enter page name"/>
+				<Label Text="Page Content:"/>
+				<Editor x:Name="PageContentEditor" Placeholder="Enter page content" HeightRequest="200"/>
+			</StackLayout>
+
+			<!-- File fields -->
+			<StackLayout x:Name="FileSection" IsVisible="False">
+				<Label Text="File Name:"/>
+				<Entry x:Name="FileNameEntry" Placeholder="Enter file name"/>
+				<Label Text="File Path:"/>
+				<Button Text="Browse Files" Clicked="OnBrowseFileClicked"/>
+				<Entry x:Name="FilePathEntry" Placeholder="File path will appear here after browsing"/>
+			</StackLayout>
+
+			<!-- Assignment Link fields -->
+			<StackLayout x:Name="AssignmentSection" IsVisible="False">
+				<Label Text="Select an assignment from this course:"/>
+				<Label x:Name="EmptyAssignmentLabel" Text="No assignments available in this course." IsVisible="False"/>
+				<ListView x:Name="AssignmentListView" ItemsSource="{Binding Assignments}">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+								<Grid>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="*"/>
+										<ColumnDefinition Width="Auto"/>
+									</Grid.ColumnDefinitions>
+									<Label Grid.Column="0" Text="{Binding .}" VerticalOptions="Center" HorizontalOptions="Start"/>
+									<Button Grid.Column="1" Text="Select" Clicked="OnSelectAssignmentClicked" CommandParameter="{Binding}" VerticalOptions="Center" HorizontalOptions="End"/>
+								</Grid>
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+			</StackLayout>
+
+			<Button x:Name="AddButton" Text="Add Content" Clicked="OnAddContentClicked"/>
+			<Button Text="Cancel" Clicked="OnCancelClicked"/>
+		</VerticalStackLayout>
+	</ScrollView>
+</ContentPage>

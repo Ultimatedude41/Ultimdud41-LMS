@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui.LMS.Views.TeacherCourseDetailView"
+             Title="TeacherCourseDetailView">
+	<ScrollView>
+		<VerticalStackLayout>
+			<Label x:Name="CourseNameLabel" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18"/>
+			<Button Text="Manage Roster" Clicked="OnManageRosterClicked"/>
+			<Button Text="Export Roster" Clicked="OnExportRosterClicked"/>
+			<Button Text="Import Roster" Clicked="OnImportRosterClicked"/>
+			<Button Text="Manage Assignments" Clicked="OnManageAssignmentsClicked"/>
+			<Button Text="Export Assignments" Clicked="OnExportAssignmentsClicked"/>
+			<Button Text="Import Assignments" Clicked="OnImportAssignmentsClicked"/>
+			<Button Text="Manage Assignment Groups" Clicked="OnManageAssignmentGroupsClicked"/>
+			<Button Text="Export Gradebook" Clicked="OnExportGradebookClicked"/>
+			<Button Text="Manage Modules" Clicked="OnManageModulesClicked"/>
+			<Button Text="Manage Announcements" Clicked="OnManageAnnouncementsClicked"/>
+			<Button Text="Course Settings" Clicked="OnCourseSettingsClicked"/>
+			<Button Text="Go Back" Clicked="GoBackClicked"/>
+		</VerticalStackLayout>
+	</ScrollView>
+</ContentPage>

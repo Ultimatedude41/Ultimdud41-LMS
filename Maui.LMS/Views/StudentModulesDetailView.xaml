@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui.LMS.Views.StudentModulesDetailView"
+             Title="StudentModulesDetailView">
+	<ScrollView>
+		<VerticalStackLayout>
+			<Label x:Name="ContentNameLabel" VerticalOptions="Center" HorizontalOptions="Center"/>
+			<Label x:Name="ContentDisplayLabel" VerticalOptions="Center" HorizontalOptions="Center"/>
+			<Label x:Name="FileContentLabel" VerticalOptions="Center" HorizontalOptions="Start" IsVisible="False"/>
+			<Button x:Name="OpenFileButton" Text="Open File" Clicked="OnOpenFileClicked"/>
+			<Button Text="Go Back" Clicked="GoBackClicked"/>
+		</VerticalStackLayout>
+	</ScrollView>
+</ContentPage>

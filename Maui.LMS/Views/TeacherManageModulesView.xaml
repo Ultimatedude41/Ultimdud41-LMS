@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui.LMS.Views.TeacherManageModulesView"
+             Title="TeacherManageModulesView">
+	<VerticalStackLayout>
+		<Label x:Name="CourseNameLabel" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18"/>
+		<Label Text="Modules" VerticalOptions="Center" HorizontalOptions="Center" FontSize="16"/>
+		<Label x:Name="EmptyStateLabel" Text="No modules in this course." VerticalOptions="Center" HorizontalOptions="Center" IsVisible="False"/>
+		<ListView x:Name="ModuleListView" ItemsSource="{Binding Modules}">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="Auto"/>
+								<ColumnDefinition Width="Auto"/>
+							</Grid.ColumnDefinitions>
+							<Label Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start">
+								<Label.FormattedText>
+									<FormattedString>
+										<Span Text="Module "/>
+										<Span Text="{Binding Id}"/>
+									</FormattedString>
+								</Label.FormattedText>
+							</Label>
+							<Button Grid.Column="1" Text="Manage Content" Clicked="OnManageContentClicked" CommandParameter="{Binding}" VerticalOptions="Center" HorizontalOptions="End"/>
+							<Button Grid.Column="2" Text="Delete" Clicked="OnDeleteClicked" CommandParameter="{Binding}" VerticalOptions="Center" HorizontalOptions="End"/>
+						</Grid>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+		<Button Text="Add New Module" Clicked="OnAddModuleClicked"/>
+		<Button Text="Go Back" Clicked="GoBackClicked"/>
+	</VerticalStackLayout>
+</ContentPage>

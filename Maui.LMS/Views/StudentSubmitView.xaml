@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui.LMS.Views.StudentSubmitView"
+             Title="StudentSubmitView">
+	<ScrollView>
+		<VerticalStackLayout>
+			<Label Text="{Binding AssignmentName}" VerticalOptions="Center" HorizontalOptions="Center"/>
+			<Label Text="{Binding AssignmentType}" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+			<!-- Description for regular assignments -->
+			<StackLayout IsVisible="{Binding IsRegularAssignment}">
+				<Label Text="Description:" VerticalOptions="Center" HorizontalOptions="Center"/>
+				<Label Text="{Binding AssignmentDescription}" VerticalOptions="Center" HorizontalOptions="Center"/>
+			</StackLayout>
+
+			<!-- Question for quizzes -->
+			<StackLayout IsVisible="{Binding IsQuiz}">
+				<Label Text="Question:" VerticalOptions="Center" HorizontalOptions="Center"/>
+				<Label Text="{Binding QuizQuestion}" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold"/>
+			</StackLayout>
+
+			<Label Text="{Binding AssignmentPoints}" VerticalOptions="Center" HorizontalOptions="Center"/>
+			<Label Text="{Binding AssignmentDueDate}" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+			<!-- File upload section (only for regular assignments, not quizzes) -->
+			<StackLayout IsVisible="{Binding IsRegularAssignment}">
+				<Label Text="Or Upload a File:"/>
+				<Button Text="Browse Files" Clicked="OnBrowseFileClicked"/>
+				<Entry x:Name="FilePathEntry" Placeholder="File path will appear here after browsing"/>
+			</StackLayout>
+
+			<Label Text="Your Submission:" VerticalOptions="Center" HorizontalOptions="Center"/>
+			<!-- CURSOR FIX (container added only) -->
+			<StackLayout x:Name="EditorContainer">
+				<Editor x:Name="SubmissionEditor" HeightRequest="200"/>
+			</StackLayout>
+
+			<Button Text="Submit Assignment" Clicked="OnSubmitClicked"/>
+			<Button Text="Go Back" Clicked="GoBackClicked"/>
+		</VerticalStackLayout>
+	</ScrollView>
+</ContentPage>

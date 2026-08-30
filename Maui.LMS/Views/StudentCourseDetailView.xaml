@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui.LMS.Views.StudentCourseDetailView"
+             Title="StudentCourseDetailView">
+	<ScrollView>
+		<VerticalStackLayout>
+			<Label x:Name="CourseNameLabel" VerticalOptions="Center" HorizontalOptions="Center"/>
+			<Label x:Name="LetterGradeLabel" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20"/>
+			<Label Text="Announcements" FontSize="16" FontAttributes="Bold" IsVisible="{Binding HasAnnouncements}"/>
+			<VerticalStackLayout x:Name="AnnouncementsContainer"/>
+			<Button Text="View Modules" Clicked="OnViewModulesClicked"/>
+			<Button Text="View Assignments" Clicked="OnViewAssignmentsClicked"/>
+			<Button Text="View My Grades" Clicked="OnViewGradesClicked"/>
+			<Button Text="View Other Students" Clicked="OnViewOtherStudentsClicked"/>
+			<Button Text="View Course Schedule" Clicked="OnViewCourseScheduleClicked"/>
+			<Button Text="Unenroll from Course" Clicked="OnUnenrollClicked"/>
+			<Button Text="Go Back" Clicked="GoBackClicked"/>
+		</VerticalStackLayout>
+	</ScrollView>
+</ContentPage>

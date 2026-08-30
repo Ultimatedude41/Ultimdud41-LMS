@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui.LMS.Views.TeacherEditContentView"
+             Title="TeacherEditContentView">
+	<ScrollView>
+		<VerticalStackLayout>
+			<Label Text="Edit Content" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18"/>
+
+			<Label x:Name="ContentTypeLabel"/>
+
+			<Label Text="Name:"/>
+			<Entry x:Name="NameEntry" Placeholder="Enter name"/>
+
+			<StackLayout x:Name="PageContentSection" IsVisible="False">
+				<Label Text="Page Content:"/>
+				<Editor x:Name="PageContentEditor" Placeholder="Enter page content" HeightRequest="200"/>
+			</StackLayout>
+
+			<StackLayout x:Name="FilePathSection" IsVisible="False">
+				<Label Text="File Path:"/>
+				<Button Text="Browse Files" Clicked="OnBrowseFileClicked"/>
+				<Entry x:Name="FilePathEntry" Placeholder="File path will appear here after browsing"/>
+			</StackLayout>
+
+			<Button Text="Save Changes" Clicked="OnSaveClicked"/>
+			<Button Text="Cancel" Clicked="OnCancelClicked"/>
+		</VerticalStackLayout>
+	</ScrollView>
+</ContentPage>

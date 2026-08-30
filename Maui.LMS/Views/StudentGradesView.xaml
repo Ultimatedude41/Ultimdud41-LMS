@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui.LMS.Views.StudentGradesView"
+             Title="StudentGradesView">
+	<ScrollView>
+		<VerticalStackLayout>
+			<Label Text="{Binding CourseTitle}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18"/>
+
+			<Label Text="Individual Assignment Grades" VerticalOptions="Center" HorizontalOptions="Center" FontSize="16"/>
+			<ListView ItemsSource="{Binding IndividualGrades}">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*"/>
+									<ColumnDefinition Width="Auto"/>
+								</Grid.ColumnDefinitions>
+								<Label Grid.Column="0" Text="{Binding DisplayText}" VerticalOptions="Center" HorizontalOptions="Start"/>
+								<Button Grid.Column="1" Text="View Details" Clicked="OnViewDetailsClicked" CommandParameter="{Binding}" VerticalOptions="Center" HorizontalOptions="End" IsVisible="{Binding HasSubmission}"/>
+							</Grid>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+
+			<Label Text="Weighted Grade Breakdown" VerticalOptions="Center" HorizontalOptions="Center" FontSize="16"/>
+			<VerticalStackLayout x:Name="WeightedGradesContainer"/>
+
+			<Label Text="{Binding FinalGradeText}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="16"/>
+
+			<Button Text="Go Back" Clicked="GoBackClicked"/>
+		</VerticalStackLayout>
+	</ScrollView>
+</ContentPage>

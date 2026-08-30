@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Maui.LMS.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Maui.LMS"
+    xmlns:views="clr-namespace:Maui.LMS.Views"
+    Title="Maui.LMS">
+
+	<!-- MAIN MENU -->
+	<ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+	<!-- Teacher Main/Navigation -->
+	<ShellContent
+        Title="Teacher"
+        ContentTemplate="{DataTemplate views:TeacherMainView}"
+        Route="TeacherMenu" />
+
+	<!-- Teacher Course Management -->
+	<ShellContent
+        Title="Teacher Manage Announcements"
+        ContentTemplate="{DataTemplate views:TeacherManageAnnouncementsView}"
+        Route="TeacherManageAnnouncements" />
+	<ShellContent
+        Title="Teacher Add Announcement"
+        ContentTemplate="{DataTemplate views:TeacherAddAnnouncementView}"
+        Route="TeacherAddAnnouncement" />
+	<ShellContent
+        Title="Teacher Edit Announcement"
+        ContentTemplate="{DataTemplate views:TeacherEditAnnouncementView}"
+        Route="TeacherEditAnnouncement" />
+	<ShellContent
+        Title="Teacher Course Management"
+        ContentTemplate="{DataTemplate views:TeacherCourseManagementView}"
+        Route="TeacherCourseManagement" />
+	<ShellContent
+        Title="Teacher Course Detail"
+        ContentTemplate="{DataTemplate views:TeacherCourseDetailView}"
+        Route="TeacherCourseDetail" />
+	<ShellContent
+        Title="Teacher Manage Roster"
+        ContentTemplate="{DataTemplate views:TeacherManageRosterView}"
+        Route="TeacherManageRoster" />
+	<ShellContent
+        Title="Teacher Import Roster"
+        ContentTemplate="{DataTemplate views:TeacherImportRosterView}"
+        Route="TeacherImportRoster" />
+	<ShellContent
+        Title="Teacher Manage Assignments"
+        ContentTemplate="{DataTemplate views:TeacherManageAssignmentsView}"
+        Route="TeacherManageAssignments" />
+	<ShellContent
+        Title="Teacher Import Assignments"
+        ContentTemplate="{DataTemplate views:TeacherImportAssignmentsView}"
+        Route="TeacherImportAssignments" />
+	<ShellContent
+        Title="Teacher Add Assignment"
+        ContentTemplate="{DataTemplate views:TeacherAddAssignmentView}"
+        Route="TeacherAddAssignment" />
+	<ShellContent
+        Title="Teacher Edit Assignment"
+        ContentTemplate="{DataTemplate views:TeacherEditAssignmentView}"
+        Route="TeacherEditAssignment" />
+	<ShellContent
+        Title="Teacher Copy Assignment"
+        ContentTemplate="{DataTemplate views:TeacherCopyAssignmentView}"
+        Route="TeacherCopyAssignment" />
+	<ShellContent
+        Title="Teacher Manage Assignment Groups"
+        ContentTemplate="{DataTemplate views:TeacherManageAssignmentGroupsView}"
+        Route="TeacherManageAssignmentGroups" />
+	<ShellContent
+        Title="Teacher Add Assignment Group"
+        ContentTemplate="{DataTemplate views:TeacherAddAssignmentGroupView}"
+        Route="TeacherAddAssignmentGroup" />
+	<ShellContent
+        Title="Teacher Edit Assignment Group"
+        ContentTemplate="{DataTemplate views:TeacherEditAssignmentGroupView}"
+        Route="TeacherEditAssignmentGroup" />
+	<ShellContent
+        Title="Teacher Add Assignment To Group"
+        ContentTemplate="{DataTemplate views:TeacherAddAssignmentToGroupView}"
+        Route="TeacherAddAssignmentToGroup" />
+	<ShellContent
+        Title="Teacher Grade Submissions"
+        ContentTemplate="{DataTemplate views:TeacherGradeSubmissionsView}"
+        Route="TeacherGradeSubmissions" />
+	<ShellContent
+        Title="Teacher Manage Modules"
+        ContentTemplate="{DataTemplate views:TeacherManageModulesView}"
+        Route="TeacherManageModules" />
+	<ShellContent
+        Title="Teacher Manage Module Content"
+        ContentTemplate="{DataTemplate views:TeacherManageModuleContentView}"
+        Route="TeacherManageModuleContent" />
+	<ShellContent
+        Title="Teacher Add Content"
+        ContentTemplate="{DataTemplate views:TeacherAddContentView}"
+        Route="TeacherAddContent" />
+	<ShellContent
+        Title="Teacher Edit Content"
+        ContentTemplate="{DataTemplate views:TeacherEditContentView}"
+        Route="TeacherEditContent" />
+	<ShellContent
+        Title="Teacher Copy Course"
+        ContentTemplate="{DataTemplate views:TeacherCopyCourseView}"
+        Route="TeacherCopyCourse" />
+	<ShellContent
+        Title="Teacher Add Course"
+        ContentTemplate="{DataTemplate views:TeacherAddCourseView}"
+        Route="TeacherAddCourse" />
+	<ShellContent
+        Title="Teacher Edit Course"
+        ContentTemplate="{DataTemplate views:TeacherEditCourseView}"
+        Route="TeacherEditCourse" />
+
+	<!-- Teacher Course Settings -->
+	<ShellContent
+        Title="Teacher Course Settings"
+        ContentTemplate="{DataTemplate views:TeacherCourseSettingsView}"
+        Route="TeacherCourseSettings" />
+
+	<!-- Teacher Student Management -->
+	<ShellContent
+        Title="Teacher Student Management"
+        ContentTemplate="{DataTemplate views:TeacherStudentManagementView}"
+        Route="TeacherStudentManagement" />
+	<ShellContent
+        Title="Teacher Add Student"
+        ContentTemplate="{DataTemplate views:TeacherAddStudentView}"
+        Route="TeacherAddStudent" />
+	<ShellContent
+        Title="Teacher Edit Student"
+        ContentTemplate="{DataTemplate views:TeacherEditStudentView}"
+        Route="TeacherEditStudent" />
+
+	<!-- Student Main/Navigation -->
+	<ShellContent
+        Title="Student"
+        ContentTemplate="{DataTemplate views:StudentMainView}"
+        Route="StudentMenu" />
+
+	<!-- Student Courses -->
+	<ShellContent
+        Title="Student Courses"
+        ContentTemplate="{DataTemplate views:StudentCourseView}"
+        Route="StudentCourses" />
+	<ShellContent
+        Title="Student Course Detail"
+        ContentTemplate="{DataTemplate views:StudentCourseDetailView}"
+        Route="StudentCourseDetail" />
+	<ShellContent
+        Title="Student Modules"
+        ContentTemplate="{DataTemplate views:StudentModulesView}"
+        Route="StudentModules" />
+	<ShellContent
+        Title="Student Modules Detail"
+        ContentTemplate="{DataTemplate views:StudentModulesDetailView}"
+        Route="StudentModulesDetail" />
+	<ShellContent
+        Title="Student Assignments"
+        ContentTemplate="{DataTemplate views:StudentAssignmentsView}"
+        Route="StudentAssignments" />
+	<ShellContent
+        Title="Student Submit Assignment"
+        ContentTemplate="{DataTemplate views:StudentSubmitView}"
+        Route="StudentSubmit" />
+	<ShellContent
+        Title="Student Grades"
+        ContentTemplate="{DataTemplate views:StudentGradesView}"
+        Route="StudentGrades" />
+	<ShellContent
+    Title="Student Grade Detail"
+    ContentTemplate="{DataTemplate views:StudentGradeDetailView}"
+    Route="StudentGradeDetail" />
+	<ShellContent
+        Title="Student Other Students"
+        ContentTemplate="{DataTemplate views:StudentOtherStudentsView}"
+        Route="StudentOtherStudents" />
+	<ShellContent
+        Title="Student Course Schedule"
+        ContentTemplate="{DataTemplate views:StudentCourseScheduleView}"
+        Route="StudentCourseSchedule" />
+</Shell>
